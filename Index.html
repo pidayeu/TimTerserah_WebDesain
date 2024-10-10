@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Beranda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tambahkan Font Awesome -->
+    <title>Beasiscope - Scholarship Finder</title>
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Include Google Sign-In library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="LOGO BEASISCOPE.png" alt="Logo Beasiscope" class="logo-img">
+        </div>
+        <div class="nav-cta-container">
+            <nav class="nav">
+                <ul>
+                    <li><a href=" ">Beranda</a></li>
+                    <li><a href="Pilih Beasiswa.html">Pilih Beasiswa</a></li>
+                    <li><a href="Portofolio.html">Portofolio</a></li>
+                    <li><a href="Artikel.html">Artikel</a></li>
+                </ul>
+            </nav>
+            <button class="signup-btn" id="openModalBtn">
+                <i class="fas fa-sign-in-alt"></i> Masuk
+            </button>
+            <button class="signup-btn" id="profileBtn" style="display: none;">
+                <i class="fas fa-user"></i> Profil
+            </button>
+            <div class="dropdown" id="dropdownContainer" style="display: none;">
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="#">Edit Profil</a>
+                    <a href="#" id="logoutBtn">Keluar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal untuk Login -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Masuk ke Akun Anda</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+
+                <button type="submit">Masuk</button>
+            </form>
+
+            <!-- Google Sign-In Button -->
+            <div class="g_id_signin" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="" data-auto_prompt="false">
+            </div>
+
+            <p class="small-text">Belum punya akun? <a href="#">Daftar di sini</a></p>
+        </div>
+    </div>
+
+
+
+    <!-- Feedback message -->
+    <div id="textFeedbackBox" class="feedback-box"></div>
+
+    <!-- Hero Section Start -->
+    <div>
+        <section class="hero" id="home">
+            <main class="content">
+                <h1>Beasiscope</span></h1>
+                <button class="cta-button"><a href="Portofolio.html">Buat Portofolio Sekarang</a></button>
+            </main>
+        </section>
+    </div>
+
+    <!-- Hero Section Start -->
+
+    <!-- Features section modified to Portfolio, Calendar, Alumni, and Training -->
+    <section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container features-section">
+            <div class="feature">
+                <img src="user-tie-solid.svg" alt="Portfolio Icon" class="icon">
+                <h3><a href="Portofolio.html">Portofolio</a></h3>
+                <p>Buat dan tampilkan portofolio akademik serta pencapaian Anda.</p>
+            </div>
+            <div class="feature">
+                <img src="filter-solid.svg" alt="Filter Icon" class="icon">
+                <h3><a href="Pilih Beasiswa.html">Filter</a></h3>
+                <p>Filter dan pilih beasiswa berdasarkan kriteria yang Anda inginkan.</p>
+            </div>
+            <div class="feature">
+                <img src="star-regular.svg" alt="Recommendation Icon" class="icon">
+                <h3><a href="Rekomendasi.html">Rekomendasi</a></h3>
+                <p>Dapatkan rekomendasi beasiswa yang sesuai dengan minat dan kualifikasi Anda.</p>
+            </div>
+            <div class="feature">
+                <img src="newspaper-regular.svg" alt="Newsletter Icon" class="icon">
+                <h3><a href="Artikel.html">Artikel</a></h3>
+                <p>Daftar untuk mendapatkan informasi terbaru tentang beasiswa melalui email.</p>
+            </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <div class="scholarship-section">
+        <h2>Testimoni Alumni</h2>
+        <div class="scholarship-cards">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front" data-review="Saya sangat bersyukur atas beasiswa ini! - Angelita">
+                        <div class="image-wrapper">
+                            <img src="3x4 Angel.jpg" alt="Angel">
+                            <div class="decorative-element"></div>
+                            <div class="decorative-square"></div>
+                        </div>
+                        <h3>Angelita</h3>
+                        <p>S1 Universitas Indonesia<br>Beasiswa Indonesia Maju</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Saya sangat bersyukur atas beasiswa ini!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"
+                        data-review="Pengalaman belajar di Cambridge sangat berharga! - Rapli Nurhasan">
+                        <div class="image-wrapper">
+                            <img src="a2aaa481-cc69-42a8-a96a-40bf669fc02a.jpeg" alt="Adhitya">
+                            <div class="decorative-element"></div>
+                            <div class="decorative-square"></div>
+                        </div>
+                        <h3>Rapli Nurhasan</h3>
+                        <p>S2 University of Cambridge<br>Beasiswa LPDP</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Pengalaman belajar di Cambridge sangat berharga!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"
+                        data-review="Terimakasih berkat Beasiscope saya bisa kuliah di UGM - Shafa ">
+                        <div class="image-wrapper">
+                            <img src="Fira.jpeg" alt="Shafa">
+                            <div class="decorative-element"></div>
+                            <div class="decorative-square"></div>
+                        </div>
+                        <h3>Fira Yulia</h3>
+                        <p>S3 University of Oxford<br> University of Oxford Scholarship</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Belajar di Oxford adalah impian yang menjadi kenyataan!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"
+                        data-review="Terimakasih Berkat Beasiscope saya bisa belajar di UGM! - Desy Nurmala">
+                        <div class="image-wrapper">
+                            <img src="Cardinal.jpeg" alt=".">
+                            <div class="decorative-element"></div>
+                            <div class="decorative-square"></div>
+                        </div>
+                        <h3>Chardinal Martin Paes</h3>
+                        <p>S2 UGM<br>Bank Indonesia Scholarship</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Terimakasih Berkat Beasiscope saya bisa belajar di UGM!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <a href="Testimoni.html" class="cta-button">Baca Cerita Alumni Bersama Beasiscope</a>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Footer-->
+    <footer class="bg-light py-4">
+        <div class="container px-5">
+            <div class="row gx-5">
+                <div class="col-md-6 small">Copyright &copy; Beasiscope 2024. All Rights Reserved.</div>
+                <div class="col-md-6 text-md-end small">
+                    <a href="#!">Privacy Policy</a>
+                    &middot;
+                    <a href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="Beranda.js"></script>
+</body>
+
+</html>

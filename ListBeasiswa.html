@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ListBeasiswa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tambahkan Font Awesome -->
+    <title>Beasiscope - Scholarship Finder</title>
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Include Google Sign-In library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="LOGO BEASISCOPE.png" alt="Logo Beasiscope" class="logo-img">
+        </div>
+        <div class="nav-cta-container">
+            <nav class="nav">
+                <ul>
+                    <li><a href="Index.html">Beranda</a></li>
+                    <li><a href="Pilih Beasiswa.html">Pilih Beasiswa</a></li>
+                    <li><a href="Portofolio.html">Portofolio</a></li>
+                    <li><a href="Artikel.html">Artikel</a></li>
+                </ul>
+            </nav>
+            <button class="signup-btn" id="openModalBtn">
+                <i class="fas fa-sign-in-alt"></i> Masuk
+            </button>
+            <button class="signup-btn" id="profileBtn" style="display: none;">
+                <i class="fas fa-user"></i> Profil
+            </button>
+            <div class="dropdown" id="dropdownContainer" style="display: none;">
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="#">Edit Profil</a>
+                    <a href="#" id="logoutBtn">Keluar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal untuk Login -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Masuk ke Akun Anda</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+
+                <button type="submit">Masuk</button>
+            </form>
+
+            <!-- Google Sign-In Button -->
+            <div class="g_id_signin" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="" data-auto_prompt="false">
+            </div>
+
+            <p class="small-text">Belum punya akun? <a href="#">Daftar di sini</a></p>
+        </div>
+    </div>
+
+
+
+    <!-- Feedback message -->
+    <div id="textFeedbackBox" class="feedback-box"></div>
+</head>
+<body>
+    
+    
+    <div class="beasiswa-list">
+        <div class="container">
+            <a href="https://beasiswabaktibca.bca.co.id" class="poster-link">
+                <img class="poster" src="Beasiswa Bakti BCA.jpeg" alt="Poster Beasiswa XYZ">
+            </a>
+            <h2><a href="https://beasiswabaktibca.bca.co.id">Beasiswa Bakti BCA</a></h2>
+            
+            <div class="info">
+                <div class="info-container">
+                    <p>S1</p>
+                </div>
+                <div class="info-container">
+                    <p>Indonesia</p>
+                </div>
+                <div class="info-container">
+                    <p>Fully Funded</p>
+                </div>
+            </div>
+
+            <div class="tanggal">
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Mulai</strong></p>
+                    <p class="tanggal-value-mulai">24 November 2024</p>
+                </div>
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Berakhir</strong></p>
+                    <p class="tanggal-value-berakhir">24 Desember 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="https://app.beasiswaperintis.org/login?callbackUrl=https://app.beasiswaperintis.org/&error=undefined" class="poster-link">
+                <img class="poster" src="Beasiswa perintis.jpeg" alt="Poster Beasiswa ABC">
+            </a>
+            <h2><a href="https://app.beasiswaperintis.org/login?callbackUrl=https://app.beasiswaperintis.org/&error=undefined">Beasiswa Perintis</a></h2>
+            
+            <div class="info">
+                <div class="info-container">
+                    <p>S2</p>
+                </div>
+                <div class="info-container">
+                    <p>Indonesia</p>
+                </div>
+                <div class="info-container">
+                    <p>Partial</p>
+                </div>
+            </div>
+
+            <div class="tanggal">
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Mulai</strong></p>
+                    <p class="tanggal-value-mulai">15 Februari 2025</p>
+                </div>
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Berakhir</strong></p>
+                    <p class="tanggal-value-berakhir">15 Mei 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="https://beasiswa.kemdikbud.go.id/pendaftaran/login" class="poster-link">
+                <img class="poster" src="Pendidikan Indonesia.jpeg" alt="Poster Beasiswa DEF">
+            </a>
+            <h2><a href="https://beasiswa.kemdikbud.go.id/pendaftaran/login">Beasiswa Pendidikan Indonesia</a></h2>
+            
+            <div class="info">
+                <div class="info-container">
+                    <p>S3</p>
+                </div>
+                <div class="info-container">
+                    <p>Indonesia</p>
+                </div>
+                <div class="info-container">
+                    <p>Fully Funded</p>
+                </div>
+            </div>
+
+            <div class="tanggal">
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Mulai</strong></p>
+                    <p class="tanggal-value-mulai">10 Oktober 2024</p>
+                </div>
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Berakhir</strong></p>
+                    <p class="tanggal-value-berakhir">10 Desember 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="InfoBeasiswa.html" class="poster-link">
+                <img class="poster" src="Pemimpin Indonesia.jpeg" alt="Poster Beasiswa ABC">
+            </a>
+            <h2><a href="InfoBeasiswa.html">Beasiswa Pendidikan Pemimpin Muda Indonesia</a></h2>
+            
+            <div class="info">
+                <div class="info-container">
+                    <p>S2</p>
+                </div>
+                <div class="info-container">
+                    <p>Indoensia</p>
+                </div>
+                <div class="info-container">
+                    <p>Partial</p>
+                </div>
+            </div>
+
+            <div class="tanggal">
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Mulai</strong></p>
+                    <p class="tanggal-value-mulai">1 Januari 2025</p>
+                </div>
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Berakhir</strong></p>
+                    <p class="tanggal-value-berakhir">1 Maret 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="InfoBeasiswa.html" class="poster-link">
+                <img class="poster" src="Indonesia Maju.jpeg" alt="Poster Beasiswa ABC">
+            </a>
+            <h2><a href="InfoBeasiswa.html">Beasiswa Indonesia Maju</a></h2>
+            
+            <div class="info">
+                <div class="info-container">
+                    <p>S2</p>
+                </div>
+                <div class="info-container">
+                    <p>Indonesia</p>
+                </div>
+                <div class="info-container">
+                    <p>Partial</p>
+                </div>
+            </div>
+
+            <div class="tanggal">
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Mulai</strong></p>
+                    <p class="tanggal-value-mulai">23 Desember 2024</p>
+                </div>
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Berakhir</strong></p>
+                    <p class="tanggal-value-berakhir">23 Februari 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="InfoBeasiswa.html" class="poster-link">
+                <img class="poster" src="Beasiswa Unggulan.jpeg" alt="Poster Beasiswa ABC">
+            </a>
+            <h2><a href="InfoBeasiswa1.html">Beasiswa Unggulan</a></h2>
+            
+            <div class="info">
+                <div class="info-container">
+                    <p>S2</p>
+                </div>
+                <div class="info-container">
+                    <p>Indonesia</p>
+                </div>
+                <div class="info-container">
+                    <p>Partial</p>
+                </div>
+            </div>
+
+            <div class="tanggal">
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Mulai</strong></p>
+                    <p class="tanggal-value-mulai">17 Agustus 2024</p>
+                </div>
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Berakhir</strong></p>
+                    <p class="tanggal-value-berakhir">20 Desember 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="InfoBeasiswa.html" class="poster-link">
+                <img class="poster" src="Gudang Garam.jpeg" alt="Poster Beasiswa ABC">
+            </a>
+            <h2><a href="InfoBeasiswa.html">Beasiswa Gudang Garam</a></h2>
+            
+            <div class="info">
+                <div class="info-container">
+                    <p>S2</p>
+                </div>
+                <div class="info-container">
+                    <p>Australia</p>
+                </div>
+                <div class="info-container">
+                    <p>Partial</p>
+                </div>
+            </div>
+
+            <div class="tanggal">
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Mulai</strong></p>
+                    <p class="tanggal-value-mulai">15 Februari 2025</p>
+                </div>
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Berakhir</strong></p>
+                    <p class="tanggal-value-berakhir">15 Mei 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="InfoBeasiswa.html" class="poster-link">
+                <img class="poster" src="Uniled.jpeg" alt="Poster Beasiswa ABC">
+            </a>
+            <h2><a href="InfoBeasiswa.html">UNILED Scholarsip</a></h2>
+            
+            <div class="info">
+                <div class="info-container">
+                    <p>S2</p>
+                </div>
+                <div class="info-container">
+                    <p>Australia</p>
+                </div>
+                <div class="info-container">
+                    <p>Partial</p>
+                </div>
+            </div>
+
+            <div class="tanggal">
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Mulai</strong></p>
+                    <p class="tanggal-value-mulai">1 Agustus 2024</p>
+                </div>
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Berakhir</strong></p>
+                    <p class="tanggal-value-berakhir">1 Desember 2024</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <a href="InfoBeasiswa.html" class="poster-link">
+                <img class="poster" src="semesta.jpeg" alt="Poster Beasiswa ABC">
+            </a>
+            <h2><a href="InfoBeasiswa.html">Beasiswa Semesta</a></h2>
+            
+            <div class="info">
+                <div class="info-container">
+                    <p>S2</p>
+                </div>
+                <div class="info-container">
+                    <p>Indonesia</p>
+                </div>
+                <div class="info-container">
+                    <p>Partial</p>
+                </div>
+            </div>
+
+            <div class="tanggal">
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Mulai</strong></p>
+                    <p class="tanggal-value-mulai">1 Januari 2025</p>
+                </div>
+                <div class="tanggal-item">
+                    <p class="tanggal-label"><strong>Tanggal Berakhir</strong></p>
+                    <p class="tanggal-value-berakhir">2 Februari 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+       <!-- Footer-->
+       <footer class="bg-light py-4">
+        <div class="container px-5">
+            <div class="row gx-5">
+                <div class="col-md-6 small">Copyright &copy; Beasiscope 2024. All Rights Reserved.</div>
+                <div class="col-md-6 text-md-end small">
+                    <a href="#!">Privacy Policy</a>
+                    &middot;
+                    <a href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

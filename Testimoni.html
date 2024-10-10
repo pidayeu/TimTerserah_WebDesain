@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni Beasiswa</title>
+    <link rel="stylesheet" href="Testimoni.css">
+    <script defer src="Testimoni.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Include Google Sign-In library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="LOGO BEASISCOPE.png" alt="Logo Beasiscope" class="logo-img"> 
+        </div>
+        <div class="nav-cta-container">
+            <nav class="nav">
+                <ul>
+                    <li><a href="Index.html">Beranda</a></li>
+                    <li><a href="Pilih Beasiswa.html">Pilih Beasiswa</a></li>
+                    <li><a href="Portofolio.html">Portofolio</a></li>
+                    <li><a href="Artikel.html">Artikel</a></li>
+                </ul>
+            </nav>
+            <button class="signup-btn" id="openModalBtn">
+                <i class="fas fa-sign-in-alt"></i> Masuk
+            </button>
+            <button class="signup-btn" id="profileBtn" style="display: none;">
+                <i class="fas fa-user"></i> Profil
+            </button>
+            <div class="dropdown" id="dropdownContainer" style="display: none;">
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="#">Edit Profil</a>
+                    <a href="#" id="logoutBtn">Keluar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Modal untuk Login -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Masuk ke Akun Anda</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+                
+                <button type="submit">Masuk</button>
+            </form>
+
+            <!-- Google Sign-In Button -->
+            <div class="g_id_signin" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="" data-auto_prompt="false"></div>
+
+            <p class="small-text">Belum punya akun? <a href="#">Daftar di sini</a></p>
+        </div>
+    </div>
+
+    <!-- Feedback message -->
+    <div id="textFeedbackBox" class="feedback-box"></div>
+
+    <!-- Header Testimoni -->
+    <header class="testimonial-header">
+        <h1>CERITA ALUMNI</h1>
+    </header>
+
+    <!-- Testimoni Section Start -->
+    <div class="testimoni-section">
+        <div class="testimoni-box" id="testimoni1">
+            <div class="testimoni-img-container">
+                <img src="Enjel.jpeg" alt="Foto Penerima Beasiswa" class="testimoni-img">
+            </div>
+            <div class="testimoni-text">
+                <h3>Angelita</h3>
+                <p class="role">S1 Universitas Indonesia</p>
+                <p class="role">Beasiswa Indonesia Maju</p>
+                <p>"Mendapat Beasiswa Indonesia Maju untuk melanjutkan studi di Universitas Indonesia adalah salah satu pencapaian terbesar dalam hidup saya. Sebagai seseorang yang selalu bermimpi untuk belajar di kampus terbaik tanah air, beasiswa ini menjadi kunci untuk mewujudkan mimpi itu tanpa khawatir tentang biaya kuliah. Di UI, saya bertemu dengan dosen-dosen luar biasa dan teman-teman dari berbagai daerah yang memiliki semangat yang sama untuk belajar dan berkontribusi bagi bangsa. Beasiswa ini juga memberi saya akses ke berbagai pelatihan dan program pengembangan diri, sehingga saya tidak hanya tumbuh secara akademis, tetapi juga secara pribadi. Pengalaman ini semakin memotivasi saya untuk terus berjuang dan berkontribusi bagi kemajuan Indonesia."</p>
+            </div>
+        </div>
+
+        <div class="testimoni-box" id="testimoni2">
+            <div class="testimoni-img-container">
+                <img src="Rafli.jpeg" alt="Foto Penerima Beasiswa" class="testimoni-img">
+            </div>
+            <div class="testimoni-text">
+                <h3>Rapli Nurhasan</h3>
+                <p class="role">S2 University of Cambridge</p>
+                <p class="role">Beasiswa LPDP</p>
+                <p>"Awalnya, saya tidak pernah membayangkan bisa mendapatkan kesempatan luar biasa ini. Namun, berkat dukungan dari beasiswa LPDP, saya akhirnya dapat meraih impian untuk melanjutkan studi S2 di University of Cambridge. Proses seleksinya yang ketat menguji tekad dan kemampuan saya, tetapi saya percaya bahwa pendidikan yang saya terima di Indonesia, ditambah dengan persiapan matang, memberi saya kepercayaan diri. Di Cambridge, saya dipertemukan dengan para akademisi dan mahasiswa dari berbagai belahan dunia, yang membuka wawasan saya tentang pentingnya kolaborasi dan inovasi dalam bidang yang saya tekuni. Beasiswa LPDP tidak hanya memberi saya kesempatan untuk belajar, tetapi juga untuk berkembang sebagai individu yang lebih siap menghadapi tantangan global."</p>
+            </div>
+        </div>
+
+        <div class="testimoni-box" id="testimoni3">
+            <div class="testimoni-img-container">
+                <img src="Fira.jpeg" alt="Foto Penerima Beasiswa" class="testimoni-img">
+            </div>
+            <div class="testimoni-text">
+                <h3>Fira Yulia</h3>
+                <p class="role">S3 University of Oxford</p>
+                <p class="role">Scholarsip</p>
+                <p>"Setelah bertahun-tahun berjuang menyelesaikan studi di tanah air, saya mendapat kesempatan yang luar biasa untuk melanjutkan pendidikan S3 di University of Oxford melalui beasiswa penuh. Proses seleksi yang ketat dan penuh tantangan membuat saya meragukan diri, namun dukungan dari keluarga, teman, dan mentor mendorong saya untuk terus berusaha. Saya merasa terhormat bisa menjadi bagian dari komunitas akademis global yang sangat berbakat, dan beasiswa ini bukan hanya sekadar bantuan finansial, tetapi juga sebuah kepercayaan dan harapan untuk membawa perubahan positif di bidang saya. Dengan dukungan penuh dari beasiswa, saya bisa fokus pada penelitian saya tanpa khawatir soal biaya, dan saya merasa semakin siap untuk menghadapi tantangan besar di dunia akademis dan profesional."</p>
+            </div>
+        </div>
+
+        <div class="testimoni-box" id="testimoni4">
+            <div class="testimoni-img-container">
+                <img src="Cardinal.jpeg" alt="Foto Penerima Beasiswa" class="testimoni-img">
+            </div>
+            <div class="testimoni-text">
+                <h3>Chardinal Martin</h3>
+                <p class="role">S2 Universitas Gadjah Mada</p>
+                <p class="role">Scholarsip</p>
+                <p>"Mendapatkan beasiswa S2 di Universitas Gadjah Mada adalah impian yang akhirnya menjadi kenyataan. Sejak kecil, saya selalu tertarik dengan dunia pendidikan dan penelitian, dan Gadjah Mada selalu menjadi tujuan saya karena reputasinya yang luar biasa dalam dunia akademik. Proses aplikasi beasiswa ini benar-benar menantang, dimulai dengan persiapan berkas yang sangat detail, hingga wawancara yang menguji komitmen serta visi saya terhadap masa depan. Beruntung, saya diberikan kesempatan untuk melanjutkan studi di program Magister Pendidikan, yang benar-benar mengubah cara pandang saya terhadap pendidikan di Indonesia. Beasiswa ini tidak hanya membantu meringankan beban finansial, tetapi juga membuka berbagai peluang jaringan dan kolaborasi dengan para ahli di bidangnya. Kini, saya merasa lebih siap untuk memberikan kontribusi yang lebih besar bagi dunia pendidikan, khususnya di daerah asal saya."</p>
+            </div>
+        </div>
+    </div>
+    <!-- Testimoni Section End -->
+
+    <!-- Pop-up Section -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <div class="popup-img-container">
+                <img src="https://via.placeholder.com/150" alt="User Photo" class="popup-img">
+            </div>
+            <div class="popup-text">
+                <h3 id="popup-name">John Doe</h3>
+                <p id="popup-role">Software Engineer</p>
+                <p id="popup-review">"This is a detailed pop-up with the same content as the testimonial box."</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer-->
+    <footer class="bg-light py-4">
+        <div class="container px-5">
+            <div class="row gx-5">
+                <div class="col-md-6 small">Copyright &copy; Beasiscope 2024. All Rights Reserved.</div>
+                <div class="col-md-6 text-md-end small">
+                    <a href="#!">Privacy Policy</a>
+                    &middot;
+                    <a href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

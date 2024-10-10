@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Artikel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Artikel Beasiswa</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Include Google Sign-In library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Tambahkan jsPDF -->
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="LOGO BEASISCOPE.png" alt="Logo Beasiscope" class="logo-img">
+        </div>
+        <div class="nav-cta-container">
+            <nav class="nav">
+                <ul>
+                    <li><a href="Index.html">Beranda</a></li>
+                    <li><a href="Pilih Beasiswa.html">Pilih Beasiswa</a></li>
+                    <li><a href="Portofolio.html">Portofolio</a></li>
+                    <li><a href="Artikel.html">Artikel</a></li>
+                </ul>
+            </nav>
+            <button class="signup-btn" id="openModalBtn">
+                <i class="fas fa-sign-in-alt"></i> Masuk
+            </button>
+            <button class="signup-btn" id="profileBtn" style="display: none;">
+                <i class="fas fa-user"></i> Profil
+            </button>
+            <div class="dropdown" id="dropdownContainer" style="display: none;">
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="#">Edit Profil</a>
+                    <a href="#" id="logoutBtn">Keluar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal untuk Login -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Masuk ke Akun Anda</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+
+                <button type="submit">Masuk</button>
+            </form>
+
+            <!-- Google Sign-In Button -->
+            <div class="g_id_signin" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="" data-auto_prompt="false">
+            </div>
+
+            <p class="small-text">Belum punya akun? <a href="#">Daftar di sini</a></p>
+        </div>
+    </div>
+
+    <!-- Header Section End -->
+
+    <!-- Hero Section Start (Home Page) -->
+    <section class="hero" id="home">
+        <main class="content">
+            <h1>Selamat Datang di Beasiscope</h1>
+            <p>Temukan berbagai peluang beasiswa yang sesuai dengan tujuan akademis Anda.</p>
+            <p>Kami menghubungkan siswa dengan beasiswa terbaik dari institusi terpercaya.</p>
+        </main>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- News Section Start (Newsletter) -->
+    <section class="news-section" id="news">
+        <h2>Berita terbaru</h2>
+        <div class="news-grid">
+            <div class="news-item">
+                <img src="Beasiswa Bakti BCA.jpeg" alt="Beasiswa Bakti BCA">
+                <p>9 September - 31 Oktober 2024 </p>
+                <h3>Beasiswa Bakti BCA periode 2025</h3>
+                <p>Ada tiga kategori Beasiswa Bakti BCA yaitu bantuan finansial, prestasi akademis, serta prestasi
+                    non-akademis...</p>
+                <a href="https://www.detik.com/edu/beasiswa/d-7541672/beasiswa-bakti-bca-2025-dibuka-ada-3-kategori-bantuan-tersedia"
+                    class="read-more">Baca Selengkapnya</a>
+            </div>
+            <div class="news-item">
+                <img src="Beasiswa uninet.jpeg" alt="Beasiswa Ernst Mach-Grant-ASEA-UNINET ">
+                <p>Tahun 2025</p>
+                <h3>Beasiswa Ernst Mach-Grant-ASEA-UNINET </h3>
+                <p>Ernst Mach-Grant-ASEA-UNINET menyediakan 4 (empat) jenis skema beasiswa ke Austria...</p>
+                <a href="https://dikti.kemdikbud.go.id/pengumuman/info-sumber-daya/penawaran-beasiswa-ernst-mach-grant-asea-uninet-tahun-2025/"
+                    class="read-more">Baca Selengkapnya</a>
+            </div>
+            <div class="news-item">
+                <img src="Beasiswa perintis.jpeg" alt="Beasiswa Perintis">
+                <p>6 Agustus - 6 Oktober 2024</p>
+                <h3>Beasiswa Perintis </h3>
+                <p>Siswa kelas 12 yang sedang mempersiapkan diri masuk perguruan tinggi negeri (PTN) bisa mendaftar
+                    program Beasiswa Perintis 2025...</p>
+                <a href="https://www.kompas.com/edu/read/2024/09/27/181308371/beasiswa-perintis-2025-dibuka-siswa-kelas-12-sma-bisa-daftar"
+                    class="read-more">Baca Selengkapnya</a>
+            </div>
+        </div>
+    </section>
+    <!-- News Section End -->
+
+    <!-- Popup and Overlay for News Section -->
+    <div class="popup">
+        <span class="popup-close">&times;</span>
+        <h3>Popup Title</h3>
+        <div class="popup-content">
+            <p>Details about the scholarship or news item go here...</p>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- Modal untuk Login (Beranda) -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Masuk ke Akun Anda</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+
+                <button type="submit">Masuk</button>
+            </form>
+
+            <!-- Google Sign-In Button -->
+            <div class="g_id_signin" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="" data-auto_prompt="false">
+            </div>
+
+            <p class="small-text">Belum punya akun? <a href="#">Daftar di sini</a></p>
+        </div>
+    </div>
+    <!-- Modal untuk Login End -->
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+        <div class="container px-5">
+            <div class="row gx-5">
+                <div class="col-md-6 small">Copyright &copy; Beasiscope 2024. All Rights Reserved.</div>
+                <div class="col-md-6 text-md-end small">
+                    <a href="#!">Privacy Policy</a>
+                    &middot;
+                    <a href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="newsletter.js"></script>
+    <script>
+        feather.replace();
+
+        // Popup functionality
+        const newsItems = document.querySelectorAll('.news-item');
+        const popup = document.querySelector('.popup');
+        const overlay = document.querySelector('.overlay');
+        const popupClose = document.querySelector('.popup-close');
+
+        newsItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                popup.style.display = 'block';
+                overlay.style.display = 'block';
+            });
+        });
+
+        popupClose.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+
+        overlay.addEventListener('click', () => {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

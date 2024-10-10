@@ -1,0 +1,324 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {  
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    min-height: 100vh; /* Body akan setinggi viewport */
+    padding-bottom: 60px; /* Ruang untuk footer */
+    
+}
+
+/* Gaya Header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, navigasi di kanan */
+    align-items: center; /* Elemen dalam header sejajar vertikal */
+    padding: 15px 30px; /* Ruang lebih besar */
+    background-color: #fff; /* Warna latar belakang header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan untuk kedalaman */
+}
+
+/* Logo */
+.logo-img {
+    width: 200px; /* Ukuran minimal logo */
+    height: auto; /* Menjaga rasio */
+}
+
+/* Navigasi dan Tombol */
+.nav-cta-container {
+    display: flex;
+    align-items: center; /* Navigasi dan tombol sejajar */
+    margin-left: auto; /* Geser ke kanan */
+}
+
+.nav {
+    margin-right: 30px; /* Jarak navigasi dari tombol */
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav ul li {
+    margin-left: 30px; /* Jarak antar item navigasi */
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s; /* Efek hover */
+}
+
+.nav ul li a:hover {
+    color: #0a0a0a; /* Warna saat hover */
+}
+
+/* Tombol Daftar dan Profil */
+.signup-btn {
+    background-color: #0097B2; /* Warna tombol */
+    color: #fdfdfd; /* Warna teks tombol */
+    border: none; /* Hilangkan border */
+    padding: 10px 20px; /* Padding untuk tombol */
+    border-radius: 20px; /* Sudut melengkung */
+    cursor: pointer; /* Penunjuk klik */
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s; /* Efek hover */
+    margin-left: 30px; 
+}
+
+.signup-btn:hover {
+    background-color: #1f7786; /* Warna saat hover */
+}
+
+/* Gaya Dropdown */
+.dropdown {
+    position: absolute; /* Mengatur posisi dropdown */
+    top: 70px; /* Menyesuaikan jarak dari atas */
+    right: 30px; /* Menyesuaikan jarak dari kanan */
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none; /* Sembunyikan dropdown secara default */
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+/* Gaya link dalam dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+/* Efek hover pada link dropdown */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Gaya Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Input dan tombol form login */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+form input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form input:focus {
+    border-color: #42d2ec;
+    outline: none;
+}
+
+form button {
+    background-color: #0097B2;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #1f7786;
+}
+
+/* Gaya Google Sign-In */
+.g_id_signin {
+    margin-top: 20px;
+}
+
+/* Teks kecil */
+.small-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.small-text a {
+    color: #1f7786;
+    text-decoration: none;
+}
+
+/* Gaya Feedback */
+.feedback-box {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #1f7786;
+    text-align: center;
+    display: none;
+}
+
+
+/* Style form container to make two columns */
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 20px; /* Jarak antar kolom */
+}
+
+/* Style the image area */
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.form-image {
+    flex: 1;
+    max-width: 50%; /* Set gambar dan form agar sama lebar */
+    display: flex;
+    justify-content: center; /* Pusatkan gambar di dalam container */
+}
+
+.form-image img {
+    width: 100%; /* Sesuaikan gambar dengan ukuran container */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover; /* Pastikan gambar tetap rapi meski ukurannya berubah */
+}
+
+.form-content {
+    flex: 1;
+    max-width: 50%; /* Sama dengan ukuran gambar */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Tambahkan padding supaya form tidak terlalu sempit */
+    max-width: 100%;
+}
+
+
+input, select, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Adjust button styles */
+input[type="submit"] {
+    background-color: #0097B2;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #007b93;
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #f8f9fa; /* Warna latar belakang footer */
+    padding: 20px 0; /* Padding atas dan bawah */
+}
+
+footer .container {
+    max-width: 1200px; /* Maksimal lebar kontainer */
+    margin: 0 auto; /* Pusatkan kontainer */
+}
+
+footer .row {
+    display: flex; /* Gunakan flexbox untuk tata letak baris */
+    flex-wrap: wrap; /* Izinkan pembungkus baris */
+}
+
+footer .col-md-6 {
+    flex: 0 0 50%; /* Setengah lebar untuk kolom */
+    max-width: 50%; /* Set maksimal lebar */
+    padding: 0 15px; /* Padding horizontal untuk kolom */
+}
+
+footer .small {
+    font-size: 14px; /* Ukuran font untuk teks kecil */
+    color: #6c757d; /* Warna teks */
+}
+
+footer .text-md-end {
+    text-align: right; /* Rata kanan untuk teks */
+}
+
+footer a {
+    color: #2494a8; /* Warna tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+    transition: color 0.3s; /* Transisi untuk hover */
+}
+
+footer a:hover {
+    color: #62e2f9; /* Warna saat hover */
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Pastikan footer memenuhi lebar halaman */
+}

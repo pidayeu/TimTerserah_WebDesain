@@ -1,0 +1,298 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Gaya Header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, navigasi di kanan */
+    align-items: center; /* Elemen dalam header sejajar vertikal */
+    padding: 15px 30px; /* Ruang lebih besar */
+    background-color: #fff; /* Warna latar belakang header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan untuk kedalaman */
+}
+
+.logo-img {
+    width: 200px; /* Ukuran minimal logo */
+    height: auto; /* Menjaga rasio */
+}
+
+/* Navigasi dan Tombol */
+.nav-cta-container {
+    display: flex;
+    align-items: center; /* Navigasi dan tombol sejajar */
+    margin-left: auto; /* Geser ke kanan */
+}
+
+.nav {
+    margin-right: 30px; /* Jarak navigasi dari tombol */
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav ul li {
+    margin-left: 30px; /* Jarak antar item navigasi */
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s; /* Efek hover */
+}
+
+.nav ul li a:hover {
+    color: #0a0a0a; /* Warna saat hover */
+}
+
+/* Tombol Daftar dan Profil */
+.signup-btn {
+    background-color: #0097B2; /* Warna tombol */
+    color: #fdfdfd; /* Warna teks tombol */
+    border: none; /* Hilangkan border */
+    padding: 10px 20px; /* Padding untuk tombol */
+    border-radius: 20px; /* Sudut melengkung */
+    cursor: pointer; /* Penunjuk klik */
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s; /* Efek hover */
+    margin-left: 30px; 
+}
+
+.signup-btn:hover {
+    background-color: #1f7786; /* Warna saat hover */
+}
+
+/* Gaya Dropdown */
+.dropdown {
+    position: absolute; /* Mengatur posisi dropdown */
+    top: 70px; /* Menyesuaikan jarak dari atas */
+    right: 30px; /* Menyesuaikan jarak dari kanan */
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none; /* Sembunyikan dropdown secara default */
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+/* Gaya link dalam dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+/* Efek hover pada link dropdown */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Gaya Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Input dan tombol form login */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+form input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form input:focus {
+    border-color: #42d2ec;
+    outline: none;
+}
+
+form button {
+    background-color: #2494a8;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #1f7786;
+}
+
+/* Gaya Google Sign-In */
+.g_id_signin {
+    margin-top: 20px;
+}
+
+/* Teks kecil */
+.small-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.small-text a {
+    color: #1f7786;
+    text-decoration: none;
+}
+
+/* Gaya Feedback */
+.feedback-box {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #1f7786;
+    text-align: center;
+    display: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start; /* Membuat tombol rata kiri */
+}
+
+.button-group button {
+    padding: 10px 20px;
+    background-color: transparent; /* Tidak berwarna */
+    color: #333; /* Warna teks */
+    border: 1px solid #ddd; /* Garis luar */
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-align: center;
+}
+
+/* Efek ketika tombol dihover */
+.button-group button:hover {
+    background-color: #0097B2;
+    color: white;
+    border-color: #0097B2;
+}
+
+/* Efek ketika tombol diklik */
+.button-group button:active, 
+.button-group button:focus {
+    background-color: #0097B2; /* Warna muncul ketika diklik */
+    color: white;
+    border-color: #0097B2;
+}
+
+/* Tombol submit */
+.form-group button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #0097B2;
+    border: 1px solid #0097B2;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    height: 60px; /* Menyelaraskan tinggi tombol submit */
+}
+
+/* Efek hover untuk tombol submit */
+.form-group button[type="submit"]:hover {
+    background-color: #0097B2;
+    color: white;
+    border-color: #0097B2;
+}
+
+/* Efek ketika tombol submit diklik */
+.form-group button[type="submit"]:active, 
+.form-group button[type="submit"]:focus {
+    background-color: #0097B2;
+    color: white;
+    border-color: #0097B2;
+}

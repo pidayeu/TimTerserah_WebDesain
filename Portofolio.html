@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Portofolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Buat Portofolio Beasiswa</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Include Google Sign-In library -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Tambahkan jsPDF -->
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="LOGO BEASISCOPE.png" alt="Logo Beasiscope" class="logo-img">
+        </div>
+        <div class="nav-cta-container">
+            <nav class="nav">
+                <ul>
+                    <li><a href="Index.html">Beranda</a></li>
+                    <li><a href="Pilih Beasiswa.html">Pilih Beasiswa</a></li>
+                    <li><a href="Portofolio.html">Portofolio</a></li>
+                    <li><a href="Artikel.html">Artikel</a></li>
+                </ul>
+            </nav>
+            <button class="signup-btn" id="openModalBtn">
+                <i class="fas fa-sign-in-alt"></i> Masuk
+            </button>
+            <button class="signup-btn" id="profileBtn" style="display: none;">
+                <i class="fas fa-user"></i> Profil
+            </button>
+            <div class="dropdown" id="dropdownContainer" style="display: none;">
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="#">Edit Profil</a>
+                    <a href="#" id="logoutBtn">Keluar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal untuk Login -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Masuk ke Akun Anda</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+
+                <button type="submit">Masuk</button>
+            </form>
+
+            <!-- Google Sign-In Button -->
+            <div class="g_id_signin" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="" data-auto_prompt="false">
+            </div>
+
+            <p class="small-text">Belum punya akun? <a href="#">Daftar di sini</a></p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-image">
+            <img src="pexels-ron-lach-9829305.jpg" alt="Deskripsi Foto">
+        </div>
+        <div class="form-content">
+            <h2>Buat Portofolio Beasiswa</h2>
+            <form id="portfolioForm">
+                <!-- Informasi Pengguna -->
+                <label for="nama">Nama Lengkap:</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+                <label for="telepon">No. Telepon:</label>
+                <input type="text" id="telepon" name="telepon" placeholder="Masukkan nomor telepon" required>
+
+                <!-- Informasi Pendidikan -->
+                <label for="jenjang_pendidikan">Jenjang Pendidikan:</label>
+                <select id="jenjang_pendidikan" name="jenjang_pendidikan" required>
+                    <option value="">Pilih jenjang pendidikan</option>
+                    <option value="SMA">SMA</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Sarjana">Sarjana</option>
+                    <option value="Magister">Magister</option>
+                    <option value="Doktor">Doktor</option>
+                </select>
+
+                <label for="jurusan">Jurusan:</label>
+                <input type="text" id="jurusan" name="jurusan" placeholder="Masukkan jurusan" required>
+
+                <!-- Karya atau Pengalaman -->
+                <label for="deskripsi">Deskripsi Diri atau Pengalaman:</label>
+                <textarea id="deskripsi" name="deskripsi" rows="5"
+                    placeholder="Tuliskan deskripsi singkat tentang diri Anda, pengalaman, atau motivasi"
+                    required></textarea>
+
+                <!-- Lampirkan Karya -->
+                <label for="upload_karya">Unggah Karya (Opsional):</label>
+                <input type="file" id="upload_karya" name="upload_karya">
+
+                <label for="link_portofolio">Link Portofolio (Opsional):</label>
+                <input type="text" id="link_portofolio" name="link_portofolio"
+                    placeholder="Masukkan link portofolio (contoh: LinkedIn, GitHub, dsb.)">
+
+                <input type="submit" value="Kirim Portofolio">
+            </form>
+        </div>
+    </div>
+
+    <script src="Portofolio.js"></script>
+    <script>
+        // Script untuk membuat PDF dari form
+        document.getElementById('portfolioForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Mencegah pengiriman form default
+
+            const formData = new FormData(event.target);
+            const resumeData = {};
+            formData.forEach((value, key) => {
+                resumeData[key] = value;
+            });
+
+            generateResume(resumeData); // Memanggil fungsi untuk menghasilkan resume
+        });
+
+        function generateResume(data) {
+            const { nama, email, telepon, jenjang_pendidikan, jurusan, deskripsi, link_portofolio } = data;
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Menambahkan informasi ke PDF
+            doc.setFont("Arial", "bold");
+            doc.text(`Nama: ${nama}`, 10, 10);
+            doc.setFont("Arial", "normal");
+            doc.text(`Email: ${email}`, 10, 20);
+            doc.text(`Telepon: ${telepon}`, 10, 30);
+            doc.text(`Jenjang Pendidikan: ${jenjang_pendidikan}`, 10, 40);
+            doc.text(`Jurusan: ${jurusan}`, 10, 50);
+            doc.text(`Deskripsi:`, 10, 60);
+            doc.setFont("Arial", "normal");
+            doc.text(deskripsi, 10, 70);
+
+            if (link_portofolio) {
+                doc.text(`Link Portofolio: ${link_portofolio}`, 10, 90);
+            }
+
+            // Simpan file PDF
+            doc.save('resume.pdf');
+        }
+    </script>
+
+    <!-- Footer-->
+    <footer class="bg-light py-4">
+        <div class="container px-5">
+            <div class="row gx-5">
+                <div class="col-md-6 small">Copyright &copy; Beasiscope 2024. All Rights Reserved.</div>
+                <div class="col-md-6 text-md-end small">
+                    <a href="#!">Privacy Policy</a>
+                    &middot;
+                    <a href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
